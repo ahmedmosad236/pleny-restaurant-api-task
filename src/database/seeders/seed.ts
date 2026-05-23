@@ -11,7 +11,6 @@ async function seed() {
 
   console.log('🌱 Starting database seeding...');
 
-  // Seed Restaurants
   const restaurants = [
     {
       nameAr: 'مطعم الكشري المصري',
@@ -85,7 +84,6 @@ async function seed() {
     }
   }
 
-  // Seed Users
   const users = [
     {
       fullName: 'Ahmed Mosaad',

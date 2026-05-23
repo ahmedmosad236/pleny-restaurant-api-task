@@ -25,14 +25,12 @@ export class UsersService {
   async getRecommendations(userId: string) {
   const userObjectId = new mongoose.Types.ObjectId(userId);
 
-  // 1️⃣ get current user
   const currentUser = await this.userModel.findById(userObjectId);
 
   if (!currentUser) {
     throw new Error('User not found');
   }
 
-  // 2️⃣ aggregation
   const similarUsers = await this.userModel.aggregate([
     {
       $match: {
